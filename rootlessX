@@ -1,0 +1,12 @@
+
+
+/etc/X11/Xwrapper.config
+
++ needs_root_rights = no
+
+$HOME/.xinitrc
+
++ xset m 0 0
++ xset -dpms s off
+
++ exec openbox-session

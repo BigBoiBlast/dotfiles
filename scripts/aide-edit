@@ -1,0 +1,14 @@
+#! /bin/bash
+
+config=/path/to/aide.conf
+EDITOR=/usr/bin/vim
+
+if [ "$EUID" != 0 ]
+then
+
+  echo "Please run as root"
+  exit
+
+fi
+
+$EDITOR $config

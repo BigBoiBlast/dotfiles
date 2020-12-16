@@ -1,0 +1,3 @@
+picom --config $HOME/.config/picom.conf &
+$HOME/.fehbg &
+polybar -c $HOME/.config/polybar/config.ini main &

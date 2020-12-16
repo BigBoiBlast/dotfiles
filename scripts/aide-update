@@ -1,0 +1,21 @@
+#! /bin/bash
+
+database=/path/to/aide.db
+database_out=/path/to/aide.db.new
+
+if [ "$EUID" -ne 0 ]
+then
+
+  echo "Please run as root"
+  exit
+
+fi
+
+echo -e "\n-------------------\n\n\n\n\n--------------------" >> /var/log/aide.log
+
+aide -u >> /var/log/aide.log
+
+cat /var/log/aide.log
+
+mv $database $database.backup
+mv $database_out $database
