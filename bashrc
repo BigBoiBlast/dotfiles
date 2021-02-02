@@ -23,11 +23,6 @@ HISTFILESIZE=1000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color) color_prompt=yes;;
-esac
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -78,5 +73,10 @@ lol()
 }
 
 export EDITOR=/usr/bin/vim
+export PATH=$PATH:$HOME/Documents/scripts:$HOME/.local/bin
+export LANG=en_US.UTF-8
+export QT_STYLE_OVERRIDE=kvantum
+umask 0037
+PS1="\e[1;31m\$? \e[1;35m\@\e[0;0m - \e[1;32m\u \e[0;34m[\w]\e[0;0m$ "
 
 neofetch |lolcat
