@@ -1,1 +1,4 @@
-cat /dev/urandom |tr -cd '[:graph:]' |head -c 25 && echo ""
+while [ ! -z "$1" ]; do
+	cat /dev/urandom |tr -cd '[:graph:]' |head -c $1 && echo ""
+shift
+done

@@ -23,6 +23,39 @@ HISTFILESIZE=1000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color) color_prompt=yes;;
+esac
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+force_color_prompt=yes
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
+    else
+	color_prompt=
+    fi
+fi
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -39,9 +72,9 @@ fi
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
-
-
-alias TorBrowser='bash ' #<-- Add path to tor browser
+TorBrowser=$HOME/Documents/tor-browser_en-US/Browser/start-tor-browser
+alias Tor-Browser='bash $TorBrowser '
+alias TorPulse='apulse $TorBrowser '
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -76,7 +109,15 @@ export EDITOR=/usr/bin/vim
 export PATH=$PATH:$HOME/Documents/scripts:$HOME/.local/bin
 export LANG=en_US.UTF-8
 export QT_STYLE_OVERRIDE=kvantum
+export SDL_AUDIODRIVER=alsa
+export NO_AT_BRIDGE=1
 umask 0037
-PS1="\e[1;31m\$? \e[1;35m\@\e[0;0m - \e[1;32m\u \e[0;34m[\w]\e[0;0m$ "
+
+# Cool thing
+PS1="\[\e[1;31m\]\$? "
+PS1+="\[\e[1;35m\]\@"
+PS1+="\[\e[0;0m\] "
+PS1+="- \[\e[1;32m\]\u "
+PS1+="\[\e[0;34m\][\w]\[\e[0;0m\]$ "
 
 neofetch |lolcat
