@@ -3,7 +3,6 @@
 *background:                  #000000
 
 ! urxvt
-!urxvt.perl-lib:	      /path/to/perllib
 urxvt.font:                   xft:fantasque sans mono:size=12:antialias=true:hinting=true
 urxvt.url-launcher:           /usr/bin/firefox
 urxvt.matcher.button:         1
@@ -11,11 +10,11 @@ urxvt.matcher.pattern.0:      \\b([a-zA-Z]+:\/\/\\w[\\w-.@:]*|www\\.\\w[\\w-]*\\
 urxvt.scrollBar:              false
 urxvt.termName:               xterm-256color
 urxvt.saveLines:              10000
-urxvt.internalBorder:          15
+urxvt.internalBorder:	      10
 !urxvt.inheritPixmap:          true
-urxvt.shading:                20
+urxvt.shading:                15
 urxvt.clipboard.autocopy:     true
-urxvt.perl-ext-common:        default,url-select,selection-to-clipboard,tabbed,pasta,matcher,keyboard-select,resize-font,font
+urxvt.perl-ext-common:        default,selection-to-clipboard,tabbed,matcher,keyboard-select
 urxvt.keysym.M-u:             perl:url-select:select_next
 urxvt.keysym.Shift-Control-V: perl:clipboard:copy
 urxvt.keysym.Shift-Control-C: perl:clipboard:paste
@@ -33,6 +32,8 @@ urxvt.scrollWithBuffer:       false
 urxvt.scrollstyle:            plain
 urxvt.secondaryScroll:        false
 urxvt.xftAntialias:           true
+!urxvt.color4:                 RoyalBlue
+!urxvt.color12:                Gray
 urxvt.matcher.rend.0:         Bold fg6
 urxvt.cursorBlink:            false
 urxvt.cursorColor:            #5f8fff
@@ -43,14 +44,10 @@ urxvt.iso14755:               false
 urxvt.iso14755_52:            false
 urxvt.depth:                  32
 urxvt.background:             rgba:0000/0000/0200/c800
-urxvt.geometry:               220x55
+urxvt.geometry:               220x60
 urxvt.title:                  skweezy jibbs
 
-
-! URxvt Color Scheme
-
-
-! Bois
+! Option
 URxvt*background: #161616
 URxvt.cursorColor: #FDA53C
 
@@ -82,8 +79,25 @@ URxvt.cursorColor: #FDA53C
 *color15: #CCCCCC
 
 
+! xterm
+xterm*VT100*geometry:         170x50
+xterm*faceName:               xft:xos4 Terminus:size=12:antialias=true
+xterm*faceSize:               12
+xterm*renderFont:             true
+xterm*utf8:                   always
+xterm*utf8Title:              true
+xterm*locale:                 true
+xterm*cursorColor:            #5f5faf
+xterm*cursorBlink:            false
+xterm*selectToClipboard:      true
+xterm*SaveLines:              10000
+xterm*transparent:            falce
+XTerm*trimSelection:          true
+XTerm*cutNewline:             false
+XTerm*highlightSelection:     true
+
 ! cursor
-Xcursor.theme:                Adwaita
+Xcursor.theme:		      Adwaita
 Xcursor.size:                 14
 
 ! xft
