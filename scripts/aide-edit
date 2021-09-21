@@ -1,6 +1,6 @@
 #! /bin/bash
 
-config=/path/to/aide.conf
+config=/usr/local/etc/aide.conf
 EDITOR=/usr/bin/vim
 
 if [ "$EUID" != 0 ]

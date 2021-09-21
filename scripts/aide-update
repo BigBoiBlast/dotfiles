@@ -1,7 +1,7 @@
 #! /bin/bash
 
-database=/path/to/aide.db
-database_out=/path/to/aide.db.new
+database=/var/lib/aide/aide.db
+database_out=/var/lib/aide/aide.db.new
 
 if [ "$EUID" -ne 0 ]
 then

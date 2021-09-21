@@ -1,0 +1,19 @@
+#! /bin/bash
+
+function _help(){
+	printf "Usage\n\n"
+	printf "Arguments:\n"
+	printf " -r|--reset, default area\n"
+	printf " -o|--osu, osu area\n"
+}
+
+while [ ! -z "$1" ]; do
+	if [[ "$1" == "-r" ]] || [[ "$1" == "--reset" ]]; then
+		xsetwacom set 8 ResetArea
+	elif [[ $1 == "-o" ]] || [[ $1 == "--osu" ]]; then
+		xsetwacom set "Wacom Intuos S Pen stylus" Area 50 50 6450 3950
+	else
+		_help
+	fi
+shift
+done
