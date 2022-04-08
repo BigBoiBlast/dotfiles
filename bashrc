@@ -16,16 +16,12 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=500
-HISTFILESIZE=1000
+HISTSIZE=1000
+HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 #[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -72,9 +68,6 @@ fi
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
-TorBrowser=$HOME/Documents/tor-browser_en-US/Browser/start-tor-browser
-alias Tor-Browser='bash $TorBrowser '
-alias TorPulse='apulse $TorBrowser '
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -120,4 +113,4 @@ PS1+="\[\e[0;0m\] "
 PS1+="- \[\e[1;32m\]\u "
 PS1+="\[\e[0;34m\][\w]\[\e[0;0m\]$ "
 
-neofetch |lolcat
+neofetch

@@ -1,3 +1,4 @@
 picom --config $HOME/.config/picom.conf &
-gifwall $HOME/Documents/wallpaper/ &
+#gifwall $HOME/Documents/wallpaper/ &
+#mpd &
 polybar -c $HOME/.config/polybar/config.ini main &
